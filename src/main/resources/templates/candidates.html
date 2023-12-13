@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <H1>Danh sach ung vien</H1>
+    <table>
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>full name</td>
+            <td>email</td>
+            <td>phone</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="candidate:${listCandidate}">
+            <td th:utext="${candidate.getId()}"></td>
+            <td th:utext="${candidate.getFullName()}"></td>
+            <td th:utext="${candidate.getEmail()}"></td>
+            <td th:utext="${candidate.getPhone()}"></td>
+            <td>
+                <form th:action="@{/getDetails}">
+                    <button type="submit" name="candidateIdDetails" th:value="${candidate.getId()}">Xem chi tiet</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

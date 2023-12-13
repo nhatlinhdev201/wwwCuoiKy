@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Thog tin chi tiet ung vien</h1>
+<h3>
+    id : <span th:utext="${candidateDetail.getId()}"></span>
+</h3>
+<h3>
+    full name : <span th:utext="${candidateDetail.getFullName()}"></span>
+</h3>
+<h3>
+    phone : <span th:utext="${candidateDetail.getPhone()}"></span>
+</h3>
+<h3>
+    email : <span th:utext="${candidateDetail.getEmail()}"></span>
+</h3>
+<h1>Kinh nghiem ung vien</h1>
+<table>
+    <thead>
+    <tr>
+        <td>id</td>
+        <td>Cong ty</td>
+        <td>vi tri</td>
+        <td>mo ta</td>
+        <td>ngay den</td>
+        <td>ngay nghi</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="experience:${candidateDetail.getExperiences()}">
+        <td th:utext="${experience.getId()}"></td>
+        <td th:utext="${experience.getCompany()}"></td>
+        <td th:utext="${experience.getRole()}"></td>
+        <td th:utext="${experience.getWorkDesc()}"></td>
+        <td th:utext="${experience.getToDate()}"></td>
+        <td th:utext="${experience.getFromDate()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

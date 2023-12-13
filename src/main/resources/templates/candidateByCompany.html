@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="can:${listCandidate}">
+            <td th:utext="${can.getId()}"></td>
+            <td th:utext="${can.getFullName()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
